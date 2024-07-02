@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StainRem</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script defer>
+        function populateDropdown2() {
+            // This function will populate the second dropdown if needed.
+            // For now, it doesn't do anything special.
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const tips = {
+                "Lipstick": {
+                    "New": "Blot with a dry cloth and apply a stain remover.",
+                    "Old": "Soak in a mix of detergent and vinegar before washing."
+                },
+                "Powder": {
+                    "New": "Shake off excess powder and use a stain remover.",
+                    "Old": "Brush off and treat with a paste of detergent and water."
+                },
+                "Touche": {
+                    "New": "Gently blot with a cloth and use a stain remover.",
+                    "Old": "Apply a detergent solution and wash as usual."
+                },
+                "Blush": {
+                    "New": "Dab with a cloth and treat with a stain remover.",
+                    "Old": "Pre-treat with liquid detergent and wash normally."
+                },
+                "Perfumes": {
+                    "New": "Rinse with cold water and use a mild detergent.",
+                    "Old": "Soak in a vinegar solution and wash."
+                },
+                "Hair Oil": {
+                    "New": "Use cloth whitening powder.",
+                    "Old": "Use a washing machine."
+                },
+                "Sauce": {
+                    "New": "Blot with a cloth and apply a stain remover.",
+                    "Old": "Soak in warm water and apply a stain remover."
+                },
+                "Blood": {
+                    "New": "Use a washing machine with cloth whitening powder.",
+                    "Old": "Soak in a mix of detergent and wash."
+                },
+                "Butter": {
+                    "New": "Blot with a cloth and apply a stain remover.",
+                    "Old": "Soak in a vinegar solution and wash."
+                },
+                "Yogurt": {
+                    "New": "Special detergent needed.",
+                    "Old": "Use washing machine."
+                },
+                "Milk": {
+                    "New": "Special detergent needed.",
+                    "Old": "Rinse in water."
+                },
+                "Eggs": {
+                    "New": "Use a washing machine with cloth whitening powder.",
+                    "Old": "Soak in a mix of detergent and wash."
+                },
+                "Borsch": {
+                    "New": "Use a washing machine with cloth whitening powder.",
+                    "Old": "Soak in a mix of detergent and wash."
+                },
+                "Berries": {
+                    "New": "Use a washing machine with cloth whitening powder.",
+                    "Old": "Soak in a mix of detergent and wash."
+                },
+                "Wine": {
+                    "New": "Use a washing machine with cloth whitening powder.",
+                    "Old": "Soak in a mix of detergent and wash."
+                },
+                "Green Oil": {
+                    "New": "Use a washing machine with cloth whitening powder.",
+                    "Old": "Soak in a mix of detergent and wash."
+                },
+                "Iodine": {
+                    "New": "Use a washing machine with cloth whitening powder.",
+                    "Old": "Soak in a mix of detergent and wash."
+                },
+                "Mixture": {
+                    "New": "Use a washing machine with cloth whitening powder.",
+                    "Old": "Soak in a mix of detergent and wash."
+                },
+                "Rust": {
+                    "New": "Throw away.",
+                    "Old": "Throw away."
+                },
+                "Glue": {
+                    "New": "Use a washing machine with cloth whitening powder.",
+                    "Old": "Soak in a mix of detergent and wash."
+                },
+                "Car Oil": {
+                    "New": "Use a washing machine with cloth whitening powder.",
+                    "Old": "Soak in a mix of detergent and wash."
+                },
+                "Paint": {
+                    "New": "Use a washing machine with cloth whitening powder.",
+                    "Old": "Soak in a mix of detergent and wash."
+                },
+                "Grass": {
+                    "New": "Dry it.",
+                    "Old": "Dry it."
+                },
+                "Shoe Cream": {
+                    "New": "Use a washing machine with cloth whitening powder.",
+                    "Old": "Soak in a mix of detergent and wash."
+                },
+                "Urine": {
+                    "New": "Use a washing machine with cloth whitening powder.",
+                    "Old": "Soak in a mix of detergent and wash."
+                }
+            };
+
+            function displayTips() {
+                const stain = document.getElementById("dropdown1").value;
+                const age = document.getElementById("dropdown2").value;
+                const tipsDiv = document.getElementById("tips");
+                const mapFrame = document.getElementById("mapFrame");
+
+                if (stain && age) {
+                    let tipsText = `Tips for removing ${stain} stain (${age}): ${tips[stain][age]}`;
+
+                    tipsDiv.innerHTML = `<p>${tipsText}</p><p>If our tips failed to help, then report to the nearest chemclean center</p>`;
+                    mapFrame.style.display = "block"; // Show the map
+                } else {
+                    tipsDiv.innerHTML = ""; // Clear tips if not both selections are made
+                    mapFrame.style.display = "none"; // Hide the map
+                }
+            }
+
+            document.getElementById('dropdown2').addEventListener('change', displayTips);
+        });
+
+        function submitStainTool() {
+            window.location.href = "https://www.reddit.com/r/Strainrem/";
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: white;
+        }
+        select, input {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        #tips {
+            margin-top: 20px;
+        }
+        .background {
+            background: #f4f4f9;
+        }
+        .footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .footer .column {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body class="background">
+<h1>STAINREM</h1>
+<h2>Have you ever gotten stumped on how to remove a stain from your fav clothes? Well, fear no more because we've got you covered. By entering the type of stain, and its age in the dropdown menu you will find out how to solve your issue.</h2>
+<h3>Please Select how you mudded yo'self</h3>
+
+<select id="dropdown1" onchange="populateDropdown2()">
+    <option value="">Select a stain</option>
+    <option value="Lipstick">Lipstick</option>
+    <option value="Powder">Powder</option>
+    <option value="Touche">Touche</option>
+    <option value="Blush">Blush</option>
+    <option value="Perfumes">Perfumes</option>
+    <option value="Hair Oil">Hair Oil</option>
+    <option value="Sauce">Sauce</option>
+    <option value="Blood">Blood</option>
+    <option value="Butter">Butter</option>
+    <option value="Yogurt">Yogurt</option>
+    <option value="Milk">Milk</option>
+    <option value="Eggs">Eggs</option>
+    <option value="Borsch">Borsch</option>
+    <option value="Berries">Berries</option>
+    <option value="Wine">Wine</option>
+    <option value="Green Oil">Green Oil</option>
+    <option value="Iodine">Iodine</option>
+    <option value="Mixture">Mixture</option>
+    <option value="Rust">Rust</option>
+    <option value="Glue">Glue</option>
+    <option value="Car Oil">Car Oil</option>
+    <option value="Paint">Paint</option>
+    <option value="Grass">Grass</option>
+    <option value="Shoe Cream">Shoe Cream</option>
+    <option value="Urine">Urine</option>
+</select>
+
+<select id="dropdown2" onchange="displayTips()">
+    <option value="">Select age of stain</option>
+    <option value="New">New</option>
+    <option value="Old">Old</option>
+</select>
+
+<div id="tips"></div>
+
+<iframe id="mapFrame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39107.860462532626!2d20.899502448632823!3d52.22083410000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecd5a5760c3cb%3A0x943397ddace6cb6!2sCleanWhale!5e0!3m2!1sen!2spl!4v1719134525694!5m2!1sen!2spl" width="400" height="300" style="border:0; display:none; margin: 20px auto;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<h3>Please help us reduce the amount of stains in the world! Know a great way? Share with others!</h3>
+<input type="text" id="userStain" placeholder="User stain">
+<input type="text" id="usedTool" placeholder="Used tool">
+<button onclick="submitStainTool()">Submit</button>
+
+<div class="footer">
+    <div class="container">
+        <div class="column">
+            <h3><a href="https://www.reddit.com/r/Strainrem/">Forum</a></h3>
+        </div>
+        <div class="column">
+            <h3>About</h3>
+            <p>StainRem is optimized to give you proper cleaning tips. Tips might be simplified to improve reading and cleaning. Tips are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content. While using StainRem you comply to our <a href="https://docs.google.com/document/d/1CeL8i7Vp68h5-O2VLixhHfgHiBuc-BQkXCUvXJVBSSA/edit?usp=sharing" target="_blank">Terms</a> and <a href="https://docs.google.com/document/d/1frms5Rmtj_2PFwB2w8RVrcxjEzxgZv_95lnSIKV5I2E/edit?usp=sharing" target="_blank">Privacy policy</a>. All media is sourced from the worldwide web.</p>
+        </div>
+        <div class="column">
+            <h3><a href="tel:+48503469778">Contact Us</a></h3>
+        </div>
+    </div>
+    <p style="text-align:center;">&copy; 2024-2099. All rights reserved.</p>
+</div>
+
+</body>
+</html>
